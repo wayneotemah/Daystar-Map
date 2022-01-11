@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-*z&fse(84&dts46l1fcw3h8m=sz7@i%&ep&jxghndx9cwqa64%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://daystarmap.herokuapp.com/',]
 
 
 # Application definition
