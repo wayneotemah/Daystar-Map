@@ -52,10 +52,10 @@ def index(request):
         # get user location
         ip = get_client_ip(request)
         res = requests.get(get_location_api+ip)
-        user_location_info = res.text
-        user_location_info = json.loads(user_location_info)
-        userLat = user_location_info.lat
-        userLon = user_location_info.lon
+        user_data = res.text
+        user_data = json.loads(user_data)
+        userLat = user_data["lat"]
+        userLon = user_data["lon"]
 
 
 
