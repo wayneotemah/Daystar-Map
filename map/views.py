@@ -56,11 +56,15 @@ def index(request):
         user_data = json.loads(user_data)
         userLat = user_data["lat"]
         userLon = user_data["lon"]
+        userCity = user_data["city"]
 
 
 
         # creat map 
         m = folium.Map(location = [userLat,userLon],zoom_start=17)
+        folium.Marker([userLat,userLon],tooltip="You are here",
+                            popup=userCity).add_to(m)
+                            
         current_events = event.objects.all()
         eventName=''
         details=''
