@@ -65,7 +65,7 @@ body{
     align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
-    width: 90%;
+    width: 100%;
     /* height: ; */
     margin: auto;
     background-color: hsl(0, 0%, 0%, 0.3);
