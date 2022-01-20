@@ -1,15 +1,25 @@
 from django.shortcuts import render
 from  .models import building,room,event,buildingPic
 from .models import building as bld
+import requests
+import json
 
 from django.conf import settings
 import folium
 
+get_location_api  = 'http://ip-api.com/json/'
 
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
 
 # Create your views here.
 def index(request):
-
+    
     if request.method=='POST':
         searchLocation = request.POST.get('locationSearch').lower()
         block = bld.objects.get(alias__contains=searchLocation)
@@ -36,11 +46,21 @@ def index(request):
         return render(request,'index.html',context)
 
 
-        #GetMethod
-    #creat map
+    #GetMethod
     if request.method=='GET':
 
-        m = folium.Map(location = [-1.441190,37.047801],zoom_start=17)
+        # get user location
+        ip = get_client_ip(request)
+        res = requests.get(get_location_api+ip)
+        user_location_info = res.text
+        user_location_info = json.loads(user_location_info)
+        userLat = user_location_info.lat
+        userLon = user_location_info.lon
+
+
+
+        # creat map 
+        m = folium.Map(location = [userLat,userLon],zoom_start=17)
         current_events = event.objects.all()
         eventName=''
         details=''

@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-*z&fse(84&dts46l1fcw3h8m=sz7@i%&ep&jxghndx9cwqa64%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['daystarmap.herokuapp.com',]
+ALLOWED_HOSTS = ['daystarmap.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     # myapps
     'map'
 ]
@@ -81,6 +80,7 @@ WSGI_APPLICATION = 'mapproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
@@ -138,3 +138,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # heroku setting
 # django_heroku.settings(locals())
+
