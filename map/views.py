@@ -5,17 +5,10 @@ import requests
 import json
 
 from django.conf import settings
-import folium
+# import folium
 
 get_location_api  = 'http://ip-api.com/json/'
 
-def get_client_ip(request):
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_forwarded_for:
-        ip = x_forwarded_for.split(',')[0]
-    else:
-        ip = request.META.get('REMOTE_ADDR')
-    return ip
 
 # Create your views here.
 def index(request):
@@ -30,13 +23,16 @@ def index(request):
         for pic in blockPics:
             pics.append(pic)
 
-        m = folium.Map(location = [block.latitude,block.longitude],zoom_start=16.)
-        folium.Marker([block.latitude,block.longitude],tooltip=block.alias,
-                popup=Name).add_to(m)
+        # m = folium.Map(location = [block.latitude,block.longitude],zoom_start=16.)
+        # folium.Marker([block.latitude,block.longitude],tooltip=block.alias,
+                # popup=Name).add_to(m)
         
-        m = m._repr_html_()
+        # m = m._repr_html_()
+
         context = {
-        'm':m,
+        # 'm':m,
+        "lat":block.latitude,
+        "lon":block.longitude,
         'search':searchLocation,
         'Name':Name,
         'details':details, 
@@ -49,18 +45,8 @@ def index(request):
     #GetMethod
     #creat map
     if request.method=='GET':
-        # ip = get_client_ip(request)
-        # res = requests.get(get_location_api+ip)
-        # user_location_info = res.text
-        # user_location_info = json.loads(user_location_info)
-        # userLat = user_location_info["lat"]
-        # userLon = user_location_info["lon"]
-        # print(user_location_info)
 
-
-
-
-        m = folium.Map(location = [-1.441190,37.047801],zoom_start=16.5)
+        # m = folium.Map(location = [-1.441190,37.047801],zoom_start=16.5)
         current_events = event.objects.all()
         eventName=''
         details=''
@@ -77,12 +63,15 @@ def index(request):
                 for pic in eventbuildingpics:
                     pics.append(pic)
 
-                folium.Marker([event_.buildingName.latitude,event_.buildingName.longitude],tooltip=event_.buildingName.name,
-                            popup='On going activity').add_to(m)
+                # folium.Marker([event_.buildingName.latitude,event_.buildingName.longitude],tooltip=event_.buildingName.name,
+                            # popup='On going activity').add_to(m)
         
-        m = m._repr_html_()
+        # m = m._repr_html_()
+        
         context = {
-            'm':m,
+            # 'm':m,
+            "lat":-1.441190,
+            "lon":37.047801,
             'eventName' : eventName,
             'details' : details,
             'eventime' : eventime,
