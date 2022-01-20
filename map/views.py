@@ -21,7 +21,7 @@ def get_client_ip(request):
 def index(request):
     
     if request.method=='POST':
-        searchLocation = request.POST.get('locationSearch').lower()
+        searchLocation = request.POST.get('locationSearch')
         block = bld.objects.get(alias__contains=searchLocation)
         Name = block.name
         details = block.details
@@ -30,7 +30,7 @@ def index(request):
         for pic in blockPics:
             pics.append(pic)
 
-        m = folium.Map(location = [block.latitude,block.longitude],zoom_start=18)
+        m = folium.Map(location = [block.latitude,block.longitude],zoom_start=16.)
         folium.Marker([block.latitude,block.longitude],tooltip=block.alias,
                 popup=Name).add_to(m)
         
@@ -47,24 +47,20 @@ def index(request):
 
 
     #GetMethod
+    #creat map
     if request.method=='GET':
-
-        # get user location
-        ip = get_client_ip(request)
-        res = requests.get(get_location_api+ip)
-        user_data = res.text
-        user_data = json.loads(user_data)
-        userLat = user_data["lat"]
-        userLon = user_data["lon"]
-        userCity = user_data["city"]
+        # ip = get_client_ip(request)
+        # res = requests.get(get_location_api+ip)
+        # user_location_info = res.text
+        # user_location_info = json.loads(user_location_info)
+        # userLat = user_location_info["lat"]
+        # userLon = user_location_info["lon"]
+        # print(user_location_info)
 
 
 
-        # creat map 
-        m = folium.Map(location = [userLat,userLon],zoom_start=17)
-        folium.Marker([userLat,userLon],tooltip="You are here",
-                            popup=userCity).add_to(m)
-                            
+
+        m = folium.Map(location = [-1.441190,37.047801],zoom_start=16.5)
         current_events = event.objects.all()
         eventName=''
         details=''
