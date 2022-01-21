@@ -76,6 +76,8 @@ def index(request):
             'eventime' : eventime,
             'buildingname':building,
             'pics':eventbuildingpics,
+            'suggestions':suggestions
+
         }
 
         return render(request,'index.html',context)
