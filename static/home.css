@@ -76,9 +76,9 @@ body{
     flex-wrap: wrap;
 } 
 
-.slideshow-container img {
-    width: 300px;
-    height: 300px;
+.slideshow-container img,img {
+    width: 150px;
+    height: 150px;
 }
 
 .cardWrap {
