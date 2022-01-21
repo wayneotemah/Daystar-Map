@@ -18,8 +18,13 @@ def index(request):
         Name = block.name
         details = block.details
         blockPics = buildingPic.objects.filter(buildingName = block).first()
-        print(blockPics)
 
+        # generate a list of names to be used as suggestions to users in searching
+        buildings = bld.objects.all()
+        suggestions = []
+        for building in buildings:
+            # suggestions.append(building.name)
+            suggestions.append(str(building.alias))
 
         context = {
         "lat":block.latitude,
@@ -27,7 +32,9 @@ def index(request):
         'search':searchLocation,
         'buildingname':Name,
         'details':details, 
-        'pics':blockPics
+        'pics':blockPics,
+        'suggestions':suggestions
+
         }
 
         return render(request,'index.html',context)
@@ -37,10 +44,12 @@ def index(request):
     #creat map
     if request.method=='GET':
 
+
         current_events = event.objects.all()
         eventName=''
         details=''
         eventime=''
+ 
 
         for event_ in current_events:
             if event.current_on:
@@ -49,8 +58,16 @@ def index(request):
                 eventime = event_.evenTime
                 building = event_.buildingName.name
                 eventbuildingpics = buildingPic.objects.filter(buildingName = event_.buildingName).first()
-                
-        
+
+
+        # generate a list of names to be used as suggestions to users in searching
+        buildings = bld.objects.all()
+        suggestions = []
+        for building in buildings:
+            # suggestions.append(building.name)
+            suggestions.append(str(building.alias))
+
+        print(suggestions)
         context = {
             "lat":-1.441190,
             "lon":37.047801,
