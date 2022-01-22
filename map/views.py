@@ -49,6 +49,7 @@ def index(request):
         eventName=''
         details=''
         eventime=''
+        eventbuilding=''
  
 
         for event_ in current_events:
@@ -56,7 +57,7 @@ def index(request):
                 eventName = event_.name
                 details = event_.details
                 eventime = event_.evenTime
-                building = event_.buildingName.name
+                eventbuilding = event_.buildingName
                 eventbuildingpics = buildingPic.objects.filter(buildingName = event_.buildingName).first()
 
 
@@ -68,12 +69,12 @@ def index(request):
             suggestions.append(str(building.alias))
 
         context = {
-            "lat":-1.441190,
-            "lon":37.047801,
+            "lat":eventbuilding.latitude,
+            "lon":eventbuilding.longitude,
             'eventName' : eventName,
             'details' : details,
             'eventime' : eventime,
-            'buildingname':building,
+            'buildingname':eventbuilding.name,
             'pics':eventbuildingpics,
             'suggestions':suggestions
 
