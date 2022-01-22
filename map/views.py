@@ -67,7 +67,6 @@ def index(request):
             # suggestions.append(building.name)
             suggestions.append(str(building.alias))
 
-        print(suggestions)
         context = {
             "lat":-1.441190,
             "lon":37.047801,

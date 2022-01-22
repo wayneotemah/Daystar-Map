@@ -71,7 +71,7 @@
     var mapOptions = {
       center: [{{ lat }}, {{ lon }}],
       zoom: 17,
-      minZoom: 17
+      minZoom: 16,
       }
 
     // Creating a map object
@@ -82,7 +82,7 @@
     mrk.addTo(map);
 
     // bind popup to marker
-    mrk.bindPopup(" <h6>{{buildingname}}</h6><p>{{details}}</p> <img src='{{ pics.image.url}}'  >").openPopup();
+    mrk.bindPopup("<h6>{{buildingname}}</h6><p>{{details}}</p> <img src='{{ pics.image.url}}'  >").openPopup();
 
 
 
