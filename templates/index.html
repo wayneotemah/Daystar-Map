@@ -25,7 +25,7 @@
 
 <body>
   <!-- Navbar -->
-  <div class="navbar navbar-expand-md navbar-dark bg-dark mb-4" role="navigation">
+  <div class="navbar navbar-expand-md navbar-dark bg-dark mb-4" style="background-color: rgba(0, 0, 0, 0.897);" role="navigation">
     <a class="navbar-brand">GeoDaystar <h6>by D.I.T.A</h6> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,9 +69,10 @@
   function make_map(position) {
     // Creating map options
     var mapOptions = {
-      center: [{{ lat }}, {{ lon }}],
+      center: [{{ centerlat }}, {{ lon }}],
       zoom: 17,
       minZoom: 15,
+      zoomControl: false
       }
 
     // Creating a map object
@@ -82,7 +83,7 @@
     mrk.addTo(map);
 
     // bind popup to marker
-    mrk.bindPopup("<h6>{{buildingname}}</h6><p>{{details}}</p> <img src='{{ pics.image.url}}'  >").openPopup();
+    mrk.bindPopup("<h6>{{buildingname}}</h6><img src='{{ pics.image.url}}'>",{maxWidth : 150}).openPopup();
 
 
 

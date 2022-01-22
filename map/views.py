@@ -29,6 +29,7 @@ def index(request):
         context = {
         "lat":block.latitude,
         "lon":block.longitude,
+        'centerlat':str(float(block.latitude)+0.001),
         'search':searchLocation,
         'buildingname':Name,
         'details':details, 
@@ -67,10 +68,13 @@ def index(request):
         for building in buildings:
             # suggestions.append(building.name)
             suggestions.append(str(building.alias))
+        
+        # print(str(float(eventbuilding.latitude)-0.001))
 
         context = {
             "lat":eventbuilding.latitude,
             "lon":eventbuilding.longitude,
+            'centerlat':str(float(eventbuilding.latitude)+0.001),
             'eventName' : eventName,
             'details' : details,
             'eventime' : eventime,
