@@ -25,39 +25,35 @@
 
 <body>
   <!-- Navbar -->
-  <div class="navbar navbar-expand-md navbar-dark bg-dark mb-4" style="background-color: rgba(0, 0, 0, 0.897);" role="navigation">
-    <a class="navbar-brand">GeoDaystar <h6>by D.I.T.A</h6> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'index' %}">Home</a>
-        </li>
-        <!-- <li class="nav-item">
-                  <a class="nav-link" href="http://fontenele.github.io/bootstrap-navbar-dropdowns/" target="_blank">Github</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
-              </li> -->
-
-      </ul>
-      <form class="form-inline mt-2 mt-md-0" method="POST">
+  <div class="navbar" style="background-color: rgba(255, 255, 255, 0);" role="navigation">
+    <!-- <a class="navbar-brand">GeoDaystar<h6> by D.I.T.A</h6></a> -->
+    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" -->
+      <!-- aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"> -->
+      <!-- <span class="navbar-toggler-icon"></span> -->
+    <!-- </button> -->
+    <!-- <div class="collapse navbar-collapse" id="navbarCollapse"> -->
+      
+      <form class="" method="POST">
         {% csrf_token %}
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="locationSearch" aria-label="Search" list="datalist">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <div class="container">
+          <input type="text"  list="datalist" placeholder="Search" name="locationSearch" aria-label="Search">
+          <div class="search"></div>
+        </div>
+
+
+
+        <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" name="locationSearch" aria-label="Search" list="datalist">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
       </form>
-    </div>
+    <!-- </div> -->
   </div>
 
   <datalist id="datalist">
-
     {%for suggestion in suggestions%}
     <option value="{{suggestion}}"></option>
     {%endfor%}
   </datalist>
+
 
   <div id="map"></div>
 
