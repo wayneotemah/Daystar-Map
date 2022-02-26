@@ -35,9 +35,7 @@ def index(request):
         'details':details, 
         'pics':blockPics,
         'suggestions':suggestions
-
         }
-
         return render(request,'index.html',context)
 
 
