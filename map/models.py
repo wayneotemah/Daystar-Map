@@ -29,15 +29,6 @@ class buildingPic(models.Model):
     def __str__(self):
         return self.picName 
     
-class event(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    name = models.CharField(max_length=100,null = False)
-    details = models.TextField()
-    buildingName = models.ForeignKey(building,on_delete=models.CASCADE)
-    current_on = models.BooleanField(default = False)
-    evenTime = models.TimeField(null = False)
 
-    def __str__(self):
-        return self.name 
 
 

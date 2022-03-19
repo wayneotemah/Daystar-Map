@@ -1,5 +1,5 @@
 from django.contrib import admin
-from  .models import building,room,buildingPic,event
+from  .models import building,room,buildingPic
 
 # Register your models here.
 class BuildingAdmin(admin.ModelAdmin):
@@ -26,13 +26,7 @@ class picsAdmin(admin.ModelAdmin):
     search_fields = ('buildingName',)
 
 
-class eventAdmin(admin.ModelAdmin):
-    list_display = ('name', 'evenTime','buildingName')
-    search_fields = ('buildingName',)
-
-
 admin.site.register(building,BuildingAdmin)
 admin.site.register(room,roomAdmin)
 admin.site.register(buildingPic,picsAdmin)
-admin.site.register(event,eventAdmin)
 

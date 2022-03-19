@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     # 'django.contrib.gis',
     # 'leaflet',
     # myapps
-    'map'
+    'map',
+    'events',
+    'meetups',
 ]
 
 MIDDLEWARE = [

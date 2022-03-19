@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from  .models import building,room,event,buildingPic
+from  .models import building,room,buildingPic
+from events.models import event
 from .models import building as bld
 import requests
 import json
