@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Event</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li class="logo">GeoDaystar</li>
+                <div class="items">
+                    <li><a href="navtest.html">Home</a></li>
+                    <li><a href="#">Map</a></li>
+                    <li><a href="eventlist.html">Events</a></li>
+                    <li><a href="discoverlistpage.html">Discover</a></li>
+                </div>
+                <li class="menuBtn"><span class="fa fa-bars"></span></li>
+
+                <li class="search-icon">
+                    <input type="search" name="search" placeholder="Search" >
+                    <label class="icon">
+                        <span class="fa fa-search"></span>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+        <script>
+            $('nav ul li.menuBtn span').click(function(){
+                $('nav ul div.items').toggleClass("show");
+                $('nav ul li.menuBtn span').toggleClass("show");
+
+            });
+        </script>
+        <!-- end of nav -->
+
+        <!-- landing section -->
+        <section class="details_section">
+            <div class="content_section">
+                <div class="content_section-left">
+                    <img src="/landing.jpg" alt="">
+                </div>
+                <div class="content_section-right">
+
+                    <h1>Event Name</h1>
+                    
+                    <span>
+                        <p>Time:1200pm</p>
+                        <p>Location:
+                            <a href="#">Location Name</a>
+                        </p>
+                    </span>
+
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse totam, sunt repudiandae animi maiores voluptates voluptate nam modi consectetur praesentium repellendus ipsum ad fuga velit. Amet maxime qui earum id!
+                    </p>
+
+                    <span>
+                        <p>Organised by: Name</p>
+                        <p>contacts email:
+                            <a href="#">email</a>
+                        </p>
+                        <p>contacts cell:
+                            <a href="#">012345678</a>
+                        </p>
+                    </span>
+
+                </div>
+            </div>
+        </section>
+        <!-- TODO: Make site resposive-->
+
+    </body>
+</html>

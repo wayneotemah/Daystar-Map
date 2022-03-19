@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Discover</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo">GeoDaystar</li>
+            <div class="items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Map</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Discover</a></li>
+            </div>
+            <li class="menuBtn"><span class="fa fa-bars"></span></li>
+
+            <li class="search-icon">
+                <input type="search" name="search" placeholder="Search" >
+                <label class="icon">
+                    <span class="fa fa-search"></span>
+                </label>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        $('nav ul li.menuBtn span').click(function(){
+            $('nav ul div.items').toggleClass("show");
+            $('nav ul li.menuBtn span').toggleClass("show");
+
+        });
+    </script>
+    <!-- end of nav -->
+
+    <!-- landing section -->
+    <section class="Discover-section">
+        <article class="welcomeInfo">
+            <h1>Discover</h1>
+            <p>Want to take a break from your academics.</p>
+
+            <p>Find and discover hangouts, clubs, sports,societies and many other strudent driven meetups. Enjoy fun and rejuvinationg activites
+            </p>
+        </article>
+        <div class="discover_cards">
+            <a class class="card_link" href="#">
+                <article class="discover_card">
+                    <img src="/landing.jpg" alt="">
+                    <div class="card_details">
+                        <h1>Dita</h1>
+                        <p>Lorem ipsum dolor sit amet</p>
+                        <p>Time:12:23:34</p>
+                        <p>Location:ICT Block</p>
+                    </div>
+                </article>
+            </a>
+            <article class="discover_card">
+                <img src="/landing.jpg" alt="">
+                <div class="card_details">
+                    <h1>Chase</h1>
+                    <p>Lorem ipsum dolor sit ameteraebaeatbaab</p>
+                    <p>Time:12:23:34</p>
+                    <p>Location:DCC</p>
+                </div>
+            </article>
+            <article class="discover_card">
+                <img src="/landing.jpg" alt="">
+                <div class="card_details">
+                    <h1>DCCC</h1>
+                    <p>Lorem ipsum dolor sit amet</p>
+                    <p>Time:12:23:34</p>
+                    <p>Location:Pac</p>
+                </div>
+            </article>
+            <article class="discover_card">
+                <img src="/landing.jpg" alt="">
+                <div class="card_details">
+                    <h1>Dulose</h1>
+                    <p>Lorem ipsum dolor sit ameteraebaeatbaab</p>
+                    <p>Time:12:23:34</p>
+                    <p>Location:Hope Center</p>
+                </div>
+            </article>
+            <article class="discover_card">
+                <img src="/landing.jpg" alt="">
+                <div class="card_details">
+                    <h1>Rugby</h1>
+                    <p>Lorem ipsum dolor sit ameteraebaeatbaab</p>
+                    <p>Time:12:23:34</p>
+                    <p>Location:Field</p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- TODO: Make site resposive-->
+
+    
+</body>
+</html>

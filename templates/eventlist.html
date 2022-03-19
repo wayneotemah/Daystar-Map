@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="logo">GeoDaystar</li>
+            <div class="items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Map</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Discover</a></li>
+            </div>
+            <li class="menuBtn"><span class="fa fa-bars"></span></li>
+
+            <li class="search-icon">
+                <input type="search" name="search" placeholder="Search" >
+                <label class="icon">
+                    <span class="fa fa-search"></span>
+                </label>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        $('nav ul li.menuBtn span').click(function(){
+            $('nav ul div.items').toggleClass("show");
+            $('nav ul li.menuBtn span').toggleClass("show");
+
+        });
+    </script>
+    <!-- end of nav -->
+
+    <!-- landing section -->
+    <section class="event-section">
+        <div class="evnt-list">
+            <h1>Events</h1>
+            <p>
+                This are the list upcoming events
+            </p>
+            <div class="event_cards">
+                <article class="event_card">
+                    <img src="/landing.jpg" alt="">
+                    <div class="card_details">
+                        <h1>Map</h1>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </article>
+
+                <article class="event_card">
+                    <img src="/landing.jpg" alt="">
+                    <div class="card_details">
+                        <h1>Map</h1>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </article>
+
+                <article class="event_card">
+                    <img src="/landing.jpg" alt="">
+                    <div class="card_details">
+                        <h1>Map</h1>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </article>
+
+                <article class="event_card">
+                    <img src="/landing.jpg" alt="">
+                    <div class="card_details">
+                        <h1>Map</h1>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </article>
+
+                <article class="event_card">
+                    <img src="/landing.jpg" alt="">
+                    <div class="card_details">
+                        <h1>Map</h1>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </article>
+
+                <article class="event_card">
+                    <img src="/landing.jpg" alt="">
+                    <div class="card_details">
+                        <h1>Map</h1>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                </article>
+
+                <article class="event_card">
+                    <div class="card_details">
+                        <h1>Map</h1>
+                        <p>Lorem ipsum dolor sit amet</p>
+                    </div>
+                    <img src="/landing.jpg" alt="">
+
+                </article>
+            </div>
+            <!-- TODO: Make site resposive-->
+
+        </div>
+    </section>
+    
+</body>
+</html>

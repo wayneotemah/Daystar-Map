@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>GeoDaystar</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li class="logo">GeoDaystar</li>
+                <div class="items">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Map</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Discover</a></li>
+                </div>
+                <li class="menuBtn"><span class="fa fa-bars"></span></li>
+
+                <li class="search-icon">
+                    <input type="search" name="search" placeholder="Search" >
+                    <label class="icon">
+                        <span class="fa fa-search"></span>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+        <script>
+            $('nav ul li.menuBtn span').click(function(){
+                $('nav ul div.items').toggleClass("show");
+                $('nav ul li.menuBtn span').toggleClass("show");
+
+            });
+        </script>
+        <!-- end of nav -->
+
+        <!-- landing section -->
+        <section class="landing_section">
+            <div class="welcoming_section">
+                <div class="welcoming_section-left">
+                    <img src="/landing.jpg" alt="">
+                </div>
+                <div class="welcoming_section-right">
+                    <div class="welcome_text">
+                        <h1>Welcome</h1>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse totam, sunt repudiandae animi maiores voluptates voluptate nam modi consectetur praesentium repellendus ipsum ad fuga velit. Amet maxime qui earum id!
+                        </p>
+                    </div>
+                    <div class="welcome__cards">
+                        <article class="welcome__card">
+                            <div class="card_icon">
+                                <img src="/icons/icons8-map-64.png" alt="">
+                            </div>
+                            <h1>Map</h1>
+                            <p>Lorem ipsum dolor sit amet</p>
+                        </article>
+
+                        <article class="welcome__card">
+                            <div class="card_icon">
+                                <img src="/icons/icons8-event-64.png" alt="">
+                            </div>
+                            <h1>Events</h1>
+                            <p>Lorem ipsum dolor sit, amet</p>
+                        </article>
+
+                        <article class="welcome__card">
+                            <div class="card_icon">
+                                <img src="/icons/icons8-discover-64.png" alt="">
+                            </div>
+                            <h1>Discover</h1>
+                            <p>Lorem ipsum dolor sit amet</p>
+                        </article>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- TODO: Make site resposive-->
+
+    </body>
+</html>
