@@ -1,9 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
         <title>GeoDaystar</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +44,7 @@
         <section class="landing_section">
             <div class="welcoming_section">
                 <div class="welcoming_section-left">
-                    <img src="/landing.jpg" alt="">
+                    <img src="{% static '/landing.jpg' %}" alt="">
                 </div>
                 <div class="welcoming_section-right">
                     <div class="welcome_text">
@@ -54,7 +56,7 @@
                     <div class="welcome__cards">
                         <article class="welcome__card">
                             <div class="card_icon">
-                                <img src="/icons/icons8-map-64.png" alt="">
+                                <img src="{% static '/icons/icons8-map-64.png' %}" alt="map icon">
                             </div>
                             <h1>Map</h1>
                             <p>Lorem ipsum dolor sit amet</p>
@@ -62,7 +64,7 @@
 
                         <article class="welcome__card">
                             <div class="card_icon">
-                                <img src="/icons/icons8-event-64.png" alt="">
+                                <img src="{% static '/icons/icons8-event-64.png' %}" alt="event icon">
                             </div>
                             <h1>Events</h1>
                             <p>Lorem ipsum dolor sit, amet</p>
@@ -70,7 +72,7 @@
 
                         <article class="welcome__card">
                             <div class="card_icon">
-                                <img src="/icons/icons8-discover-64.png" alt="">
+                                <img src="{% static '/icons/icons8-discover-64.png' %}" alt="discover icon">
                             </div>
                             <h1>Discover</h1>
                             <p>Lorem ipsum dolor sit amet</p>

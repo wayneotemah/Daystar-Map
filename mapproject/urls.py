@@ -14,16 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from django.utils.regex_helper import normalize
 from django.conf import settings
 from django.conf.urls.static import static
 
-from map import views as map_views
+from map import views as landingpage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',map_views.index, name='index'),
+    path('',landingpage.index),
+    path('map/',include('map.urls')),
+    # path('events/',include('events.urls')),
+    # path('meetups/',include('meetups.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
