@@ -326,7 +326,7 @@ nav ul li.menuBtn span.show:before{
 
 /* events page css */
 
-.evnt-list{
+.event-list{
     margin: 1.6rem 0 2.5rem 0;
     padding:1.6rem;
 }
@@ -335,6 +335,10 @@ nav ul li.menuBtn span.show:before{
     margin-top: 2rem;
     grid-template-columns: repeat(4,1fr);
     gap: 0.5rem;
+}
+.event_cards a{
+    text-decoration: none;
+    color: black;
 }
 .event_card{
     background: rgb(145, 145, 145);

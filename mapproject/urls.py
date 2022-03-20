@@ -25,8 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',landingpage.index),
     path('map/',include('map.urls')),
-    # path('events/',include('events.urls')),
-    # path('meetups/',include('meetups.urls')),
+    path('events/',include('events.urls')),
+    path('meetups/',include('meetups.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

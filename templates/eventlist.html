@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     
 <head>
     <meta charset="UTF-8">
     <title>Events</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -42,68 +43,21 @@
 
     <!-- landing section -->
     <section class="event-section">
-        <div class="evnt-list">
+        <div class="event-list">
             <h1>Events</h1>
             <p>
                 This are the list upcoming events
             </p>
             <div class="event_cards">
-                <article class="event_card">
-                    <img src="/landing.jpg" alt="">
-                    <div class="card_details">
-                        <h1>Map</h1>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                </article>
-
-                <article class="event_card">
-                    <img src="/landing.jpg" alt="">
-                    <div class="card_details">
-                        <h1>Map</h1>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                </article>
-
-                <article class="event_card">
-                    <img src="/landing.jpg" alt="">
-                    <div class="card_details">
-                        <h1>Map</h1>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                </article>
-
-                <article class="event_card">
-                    <img src="/landing.jpg" alt="">
-                    <div class="card_details">
-                        <h1>Map</h1>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                </article>
-
-                <article class="event_card">
-                    <img src="/landing.jpg" alt="">
-                    <div class="card_details">
-                        <h1>Map</h1>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                </article>
-
-                <article class="event_card">
-                    <img src="/landing.jpg" alt="">
-                    <div class="card_details">
-                        <h1>Map</h1>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                </article>
-
-                <article class="event_card">
-                    <div class="card_details">
-                        <h1>Map</h1>
-                        <p>Lorem ipsum dolor sit amet</p>
-                    </div>
-                    <img src="/landing.jpg" alt="">
-
-                </article>
+                <a class="card_link" href="#">
+                    <article class="event_card">
+                        <img src="{% static '/landing.jpg' %}" alt="">
+                        <div class="card_details">
+                            <h1>Map</h1>
+                            <p>Lorem ipsum dolor sit amet</p>
+                        </div>
+                    </article>
+                </a>
             </div>
 
         </div>
